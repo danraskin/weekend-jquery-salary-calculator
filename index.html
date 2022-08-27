@@ -8,14 +8,12 @@
 <body>
     <header>Salary Calculator</header>
     <section id = "input_field">
-        <!-- FORM FIELDS
-        _employee first name,
-        last name, 
-        ID number,     
-        job title, 
-        annual salary_. 
-        SUBMIT BUTTON
-        -->
+        <input id = "input_firstName" type = "text" placeholder="First Name"></input>
+        <input id = "input_lastName" type = "text" placeholder="Last Name"></input>
+        <input id = "input_employeeID" type = "text" placeholder="ID Number"></input>
+        <input id = "input_title" type = "text" placeholder="Title"></input>
+        <input id = "input_salary" type = "text" placeholder="Annual Salary"></input>
+        <button id = "btn_submit">Submit Employee</button>
     </section>
     
     <table>
@@ -26,13 +24,16 @@
                 <th>ID Number</th>
                 <th>Instrument</th>
                 <th>Annual Salary</th>
+                
             </tr>
         </thead>
-        <tbody id="tableBody">
-            
+        <tbody id="table_body">
         </tbody>
+        <tfoot>
+            <tr>
+                <td id="total_salary">Total Monthly: </td>
+            </tr>
+        </tfoot>
     </table>
     
-    <!-- DISPLAY FIELDS
-     -->
 </body>
