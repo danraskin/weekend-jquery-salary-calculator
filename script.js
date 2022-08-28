@@ -1,31 +1,26 @@
-// The application should have an input form that collects _employee first name, 
-// last name, ID number, job title, annual salary_.
-
-// A 'Submit' button should collect the form information,
-
-// store the information to calculate monthly costs, append information to the DOM and clear the input fields. 
-// Using the stored information, calculate monthly costs and append this to the to DOM. 
-// If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
-
-// Create a delete button that removes an employee from the DOM. 
-// For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 
 // COMPLETE ###1 create DOM architecture
 // COMPLETE ###2 enable submit employee
+//      COMPLETE - prevent incomplete submissions AND alert user
 //      COMPLETE - click listener on 'submit' button
 //      COMPLETE - add value of employees to employee array
 //      COMPLETE - re-render table
 //      COMPLETE - clear input fields
-//      - prevent incomplete submissions AND alert user
 // COMPLETE ###3 calculate total salary
-//      - const monthly budget = 20000
-//
+//      COMPLETE - const monthly budget = 20000
 // COMPLETE ###4 display total salary
 // COMPLETE ###5 salary threshold display
 //      COMPLETE - display with '$'
-//      ###6 delete employee
-//          -- from DOM
-//           capture index from td id and use that to delete employee from employeeList
+// COMPLETE ###6 delete employee
+//      COMPLETE - from DOM
+
+// ## CSS STYLING ##
+// ###1 CSS Grid archicture
+// ###2 Flexbox element
+// ###3 Table styles
+// ###4 Give table a 5 row structure to start
+//  - set <tr> id row_0 - row_4
+//  - in displayEmployees(), if-then tree
 
 $(`document`).ready(onReady);
 function onReady () {
@@ -61,20 +56,30 @@ employeeList = [ //create array of employee objects to start
     // }
 ]
 
-function addEmployee() { //adds new employee to employee array
-    employeeList.push(
-//assigns key values from inputs
-        { 
-            firstName: $( '#input_firstName' ).val(),
-            lastName: $( '#input_lastName' ).val(),
-            employeeID: $( '#input_employeeID' ).val(),
-            title: $( '#input_title' ).val(),
-            salary: $( '#input_salary' ).val(),
-        }
-    );
-    $( 'input' ).val(''); //clears inputs
-    displayEmployees();
-    monthlyCost();
+function addEmployee() { //adds new employee to employee array. won't accept blank fields OR incorrect salary amounts.
+    if ( $( '#input_firstName' ).val() === '' || $( '#input_lastName' ).val() === '' || $( '#input_employeeID' ).val() === '' || $( '#input_title' ).val() === '' || $( '#input_salary' ).val() === '') {
+        alert('Please complete employee submission');
+        return false;
+    } else if (isNaN( Number($("#input_salary").val())) === true) { //wow this syntax took a while to perfect.
+        $( "#input_salary" ).val('');
+        alert('Please enter correct salary amount');
+        return false;
+    } else {
+        employeeList.push(
+        //assigns key values from inputs
+            { 
+                firstName: $( '#input_firstName' ).val(),
+                lastName: $( '#input_lastName' ).val(),
+                employeeID: $( '#input_employeeID' ).val(),
+                title: $( '#input_title' ).val(),
+                salary: $( '#input_salary' ).val(),
+            }
+        );
+        $( 'input' ).val(''); //clears inputs
+        displayEmployees();
+        monthlyCost();
+        return true;
+    }
 }
 
 function displayEmployees () { //renders employee list to table
@@ -108,8 +113,6 @@ function deleteEmployee() {
     // console.log(employeeIndex);
     // console.log(employeeList);
 }
-
-
 
 function monthlyCost () {
     let costPerMonth = 0;

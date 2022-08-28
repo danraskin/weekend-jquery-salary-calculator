@@ -1,0 +1,31 @@
+body {
+    background-color: burlywood;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    font-size: 30px;
+    background-color:lightskyblue;
+    padding: 20px;
+    border-style: solid;
+    border-color:dodgerblue;
+
+}
+
+.input_field {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    justify-items: center;
+}
+.inputs {
+    grid-template-columns: auto auto auto auto auto;
+}
+input {
+    width: 100px;
+}
+#btn_submit {
+    display:flex;
+}
+

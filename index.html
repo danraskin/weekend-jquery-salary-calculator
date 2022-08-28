@@ -2,19 +2,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Weekend Jquery Salary Calculator</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="jquery.js" charset="UTF-8"></script>
     <script src="script.js" charset="UTF-8"></script>
 </head>
 <body>
     <header>Salary Calculator</header>
-    <section id = "input_field">
-        <input id = "input_firstName" type = "text" placeholder="First Name"></input>
-        <input id = "input_lastName" type = "text" placeholder="Last Name"></input>
-        <input id = "input_employeeID" type = "text" placeholder="ID Number"></input>
-        <input id = "input_title" type = "text" placeholder="Title"></input>
-        <input id = "input_salary" type = "text" placeholder="Annual Salary"></input>
-        <button id = "btn_submit">Submit Employee</button>
-    </section>
+    <div class = "inputs_field">
+        <p>Add Employee</p>
+        <div class="inputs">
+            <input id = "input_firstName" type = "text" placeholder="First Name"></input>
+            <input id = "input_lastName" type = "text" placeholder="Last Name"></input>
+            <input id = "input_employeeID" type = "text" placeholder="ID Number"></input>
+            <input id = "input_title" type = "text" placeholder="Title"></input>
+            <input id = "input_salary" type = "text" placeholder="Annual Salary"></input>
+        </div>
+        <p><button id = "btn_submit">Submit</button></p>
+    </div>
     
     <table>
         <thead>
@@ -22,7 +26,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>ID Number</th>
-                <th>Instrument</th>
+                <th>Job Title</th>
                 <th>Annual Salary</th>
                 
             </tr>
