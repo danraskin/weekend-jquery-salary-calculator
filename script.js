@@ -1,4 +1,3 @@
-
 // COMPLETE ###1 create DOM architecture
 // COMPLETE ###2 enable submit employee
 //      COMPLETE - prevent incomplete submissions AND alert user
@@ -13,6 +12,7 @@
 //      COMPLETE - display with '$'
 // COMPLETE ###6 delete employee
 //      COMPLETE - from DOM
+//      COMPLETE - from object array
 
 // ## CSS STYLING ##
 // ###1 CSS Grid archicture
@@ -20,7 +20,7 @@
 // ###3 Table styles
 // ###4 Give table a 5 row structure to start
 //  - set <tr> id row_0 - row_4
-//  - in displayEmployees(), if-then tree
+//  - in displayEmployees(), if-then tree??
 
 $(`document`).ready(onReady);
 function onReady () {
@@ -31,30 +31,7 @@ function onReady () {
 
 const monthlyBudget = 20000; //monthly budget maximum
 
-employeeList = [ //create array of employee objects to start
-    // TEST ARRAY with band members of Death 
-    //{
-    //     firstName: 'Chuck',
-    //     lastName: 'Schuldiner',
-    //     employeeID: '00001',
-    //     title: 'Band Lead',
-    //     salary: 12
-    // },
-    // {
-    //     firstName: 'Terry',
-    //     lastName: 'Butler',
-    //     employeeID: '00011',
-    //     title: 'Bass',
-    //     salary: 12
-    // },
-    // {
-    //     firstName: 'Gene',
-    //     lastName: 'Hoglan',
-    //     employeeID: '00111',
-    //     title: 'Drums',
-    //     salary: 12
-    // }
-]
+employeeList = [];
 
 function addEmployee() { //adds new employee to employee array. won't accept blank fields OR incorrect salary amounts.
     if ( $( '#input_firstName' ).val() === '' || $( '#input_lastName' ).val() === '' || $( '#input_employeeID' ).val() === '' || $( '#input_title' ).val() === '' || $( '#input_salary' ).val() === '') {
@@ -66,7 +43,7 @@ function addEmployee() { //adds new employee to employee array. won't accept bla
         return false;
     } else {
         employeeList.push(
-        //assigns key values from inputs
+        //grabs key values from inputs
             { 
                 firstName: $( '#input_firstName' ).val(),
                 lastName: $( '#input_lastName' ).val(),

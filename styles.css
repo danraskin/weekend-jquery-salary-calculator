@@ -14,14 +14,25 @@ header {
 }
 
 .input_field {
-    display: grid;
+    display: inline-grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: auto;
-    justify-items: center;
+    margin: 0 25%;
 }
+
 .inputs {
     grid-template-columns: auto auto auto auto auto;
+    justify-self: center
 }
+
+.input_header {
+    justify-self: left;
+}
+
+.input_footer {
+    justify-self: right;
+}
+
 input {
     width: 100px;
 }
@@ -29,3 +40,23 @@ input {
     display:flex;
 }
 
+table {
+    margin: 0 auto;
+    width: 75%;
+}
+table, td, th, tr {
+    border: 1px solid;
+    border-collapse: collapse;
+   
+}
+tfoot {
+    background-color: white;
+}
+
+thead {
+    background-color:rgba(230, 249, 198, 0.927)
+}
+[id*="row_"] {
+    height: 20px;
+    background-color: honeydew
+}

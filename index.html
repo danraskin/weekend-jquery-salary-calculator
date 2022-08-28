@@ -8,8 +8,8 @@
 </head>
 <body>
     <header>Salary Calculator</header>
-    <div class = "inputs_field">
-        <p>Add Employee</p>
+    <div class = "input_field">
+        <p class = "input_header">Add Employee</p>
         <div class="inputs">
             <input id = "input_firstName" type = "text" placeholder="First Name"></input>
             <input id = "input_lastName" type = "text" placeholder="Last Name"></input>
@@ -17,7 +17,7 @@
             <input id = "input_title" type = "text" placeholder="Title"></input>
             <input id = "input_salary" type = "text" placeholder="Annual Salary"></input>
         </div>
-        <p><button id = "btn_submit">Submit</button></p>
+        <p class = "input_footer"><button id = "btn_submit">Submit</button></p>
     </div>
     
     <table>
@@ -32,11 +32,30 @@
             </tr>
         </thead>
         <tbody id="table_body">
+            <tr id="row_0">
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row_1">
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row_2">
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
         </tbody>
         <tfoot>
-            <tr>
-                <td id="total_salary">Total Monthly: </td>
-            </tr>
+            <td id="total_salary">Total Monthly: </td>
         </tfoot>
     </table>
     
