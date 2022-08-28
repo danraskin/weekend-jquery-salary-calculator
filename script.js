@@ -1,27 +1,3 @@
-// COMPLETE ###1 create DOM architecture
-// COMPLETE ###2 enable submit employee
-//      COMPLETE - prevent incomplete submissions AND alert user
-//      COMPLETE - click listener on 'submit' button
-//      COMPLETE - add value of employees to employee array
-//      COMPLETE - re-render table
-//      COMPLETE - clear input fields
-// COMPLETE ###3 calculate total salary
-//      COMPLETE - const monthly budget = 20000
-// COMPLETE ###4 display total salary
-// COMPLETE ###5 salary threshold display
-//      COMPLETE - display with '$'
-// COMPLETE ###6 delete employee
-//      COMPLETE - from DOM
-//      COMPLETE - from object array
-
-// ## CSS STYLING ##
-// ###1 CSS Grid archicture
-// ###2 Flexbox element
-// ###3 Table styles
-// ###4 Give table a 5 row structure to start
-//  - set <tr> id row_0 - row_4
-//  - in displayEmployees(), if-then tree??
-
 $(`document`).ready(onReady);
 function onReady () {
     console.log('JQ'); //all's good in JQ

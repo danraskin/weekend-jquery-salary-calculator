@@ -55,4 +55,33 @@ Event handling:
         table is re-displayed displayEmployees();
         monthly cost is re-displayed monthlyCost();
 
+## working checklist of tasks/methods
+// ## javascript/jquery ##
+
+// COMPLETE ###1 create DOM architecture
+// COMPLETE ###2 enable submit employee
+//      COMPLETE - prevent incomplete submissions AND alert user
+//      COMPLETE - click listener on 'submit' button
+//      COMPLETE - add value of employees to employee array
+//      COMPLETE - re-render table
+//      COMPLETE - clear input fields
+// COMPLETE ###3 calculate total salary
+//      COMPLETE - const monthly budget = 20000
+// COMPLETE ###4 display total salary
+// COMPLETE ###5 salary threshold display
+//      COMPLETE - display with '$'
+// COMPLETE ###6 delete employee
+//      COMPLETE - from DOM
+//      COMPLETE - from object array
+
+// ## CSS STYLING ##
+
+// COMPLETE ###1 CSS Grid archicture - boring
+// COMPLETE ###3 Table styles - boring and ugly
+
+----INCOMPLETE-----
+// ###4 Give table a 3 row structure to start. first three employee inputs would be inserted into existing <tr> elements; subsequent employees would add new <tr> elements.
+//  - set <tr> id row_0 - row_4
+//  - in displayEmployees(), if-then tree??
+
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
