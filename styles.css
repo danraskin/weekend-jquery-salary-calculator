@@ -47,7 +47,14 @@ table {
 table, td, th, tr {
     border: 1px solid;
     border-collapse: collapse;
+  
    
+}
+
+th, td {
+    width: 200px;
+    text-align: center;
+
 }
 tfoot {
     background-color: white;
@@ -57,6 +64,6 @@ thead {
     background-color:rgba(230, 249, 198, 0.927)
 }
 [id*="row_"] {
-    height: 20px;
+    height: 22px;
     background-color: honeydew
 }

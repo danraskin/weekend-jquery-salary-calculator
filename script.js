@@ -10,7 +10,7 @@ const monthlyBudget = 20000; //monthly budget maximum
 employeeList = [];
 
 function addEmployee() { //adds new employee to employee array. won't accept blank fields OR incorrect salary amounts.
-    if ( $( '#input_firstName' ).val() === '' || $( '#input_lastName' ).val() === '' || $( '#input_employeeID' ).val() === '' || $( '#input_title' ).val() === '' || $( '#input_salary' ).val() === '') {
+    if ( $( '#input_firstName' ).val() === '' || $( '#input_lastName' ).val() === '' || $( '#input_employeeID' ).val() === '' || $( '#input_title' ).val() === '' || $( '#input_salary' ).val() === '') { // better syntax: if ( !$('blahblah').val() ) || !etc ) {} !foo =falsey
         alert('Please complete employee submission');
         return false;
     } else if (isNaN( Number($("#input_salary").val())) === true) { //wow this syntax took a while to perfect.
@@ -37,8 +37,8 @@ function addEmployee() { //adds new employee to employee array. won't accept bla
 
 function displayEmployees () { //renders employee list to table
 //clears table body 
-    for (let i = 0; i < employeeList.length; i++) {
-        if (i === 0 || i === 1 || i === 2) {
+    for (let i = 0; i < employeeList.length; i++) { //loops employeeList and tracks index position 
+        if (i === 0 || i === 1 || i === 2) { // IF-ELSE tree preserves three-row table template
             //console.log('first three');
             $( `#row_${i}` ).empty();
             $( `#row_${i}` ).append(`
@@ -67,7 +67,12 @@ function displayEmployees () { //renders employee list to table
 function deleteEmployee() {
 
     employeeIndex = ($(this).attr('id').split('_')[1]); //grabs index value from <tr> id
-    $(this).remove();
+
+    if (employeeIndex === '0' || employeeIndex === '1' || employeeIndex === '2') {
+        $(this).children().empty(); //empties html template <td>
+    } else {
+        $(this).remove(); //removes html <tr> beyond first three rows
+    }
     if(employeeIndex === employeeIndex.length-1){ //removes employee object from array based on index position
         employeeList.pop();
     } else {
