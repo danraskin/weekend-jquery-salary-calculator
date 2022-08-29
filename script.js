@@ -37,18 +37,30 @@ function addEmployee() { //adds new employee to employee array. won't accept bla
 
 function displayEmployees () { //renders employee list to table
 //clears table body 
-    $( '#table_body' ).empty();
-    for (let i = 0; i < employeeList.length; i++) { //loops employee array, appends each employee to table table AND assigns row ID based on employee index position
-        $( '#table_body' ).append(`
-        <tr id="row_${i}">>
-            <td>${employeeList[i].firstName}</td>
-            <td>${employeeList[i].lastName}</td>
-            <td>${employeeList[i].employeeID}</td>
-            <td>${employeeList[i].title}</td>
-            <td>${employeeList[i].salary}</td>
-            <td><button id="btn_delete_employee">delete</button></td>
-        </tr>
-        `);
+    for (let i = 0; i < employeeList.length; i++) {
+        if (i === 0 || i === 1 || i === 2) {
+            //console.log('first three');
+            $( `#row_${i}` ).empty();
+            $( `#row_${i}` ).append(`
+                <td>${employeeList[i].firstName}</td>
+                <td>${employeeList[i].lastName}</td>
+                <td>${employeeList[i].employeeID}</td>
+                <td>${employeeList[i].title}</td>
+                <td>${employeeList[i].salary}</td>
+                <td><button id="btn_delete_employee">delete</button></td>
+            `);
+        } else {
+            $( '#table_body' ).append(`
+                <tr id="row_${i}">>
+                    <td>${employeeList[i].firstName}</td>
+                    <td>${employeeList[i].lastName}</td>
+                    <td>${employeeList[i].employeeID}</td>
+                    <td>${employeeList[i].title}</td>
+                    <td>${employeeList[i].salary}</td>
+                    <td><button id="btn_delete_employee">delete</button></td>
+                </tr>
+                `);
+        }
     }
 }
 
