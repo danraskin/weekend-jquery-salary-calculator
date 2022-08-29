@@ -36,10 +36,11 @@ function addEmployee() { //adds new employee to employee array. won't accept bla
 }
 
 function displayEmployees () { //renders employee list to table
-//clears table body 
+//clears table body
+    $( '#table_body' ).empty();
     for (let i = 0; i < employeeList.length; i++) { //loops employeeList and tracks index position 
-        // if (i === 0 || i === 1 || i === 2) { // IF-ELSE tree preserves three-row table template
-        //     //console.log('first three');
+        //if (i === 0 || i === 1 || i === 2) { // IF-ELSE tree preserves three-row table template
+            //console.log('first three');
         //     $( `#row_${i}` ).empty();
         //     $( `#row_${i}` ).append(`
         //         <td>${employeeList[i].firstName}</td>
@@ -50,7 +51,7 @@ function displayEmployees () { //renders employee list to table
         //         <td><button class="btn_delete_employee">delete</button></td>
         //     `);
         // } else {
-            $( '#table_body' ).empty();
+           // $( '#table_body' ).empty();
             $( '#table_body' ).append(`
                 <tr id="row_${i}">>
                     <td>${employeeList[i].firstName}</td>
@@ -61,7 +62,7 @@ function displayEmployees () { //renders employee list to table
                     <td><button class="btn_delete_employee">delete</button></td>
                 </tr>
                 `);
-       // }
+        //}
     }
 }
 
@@ -74,7 +75,7 @@ function deleteEmployee() {
     // } else {
     //     $(this).remove(); //removes html <tr> beyond first three rows
     // }
-    $(this).remove();
+    //$(this).remove();
     if(employeeIndex === employeeIndex.length-1){ //removes employee object from array based on index position
         employeeList.pop();
     } else {
