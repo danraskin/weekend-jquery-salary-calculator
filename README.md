@@ -23,7 +23,9 @@ Event handling:
 
         3) displayEmployees()
         Table is cleared.
-        For-loop loops through employeeList array. For each employee:
+        ### below attempt does not work
+
+        For-loop loops through employeeList array. For each employee: 
             IF employee index is 0-2,
                 html template <tr> is emptied and appended
                 $( `#row_${i}` ).empty();
@@ -33,6 +35,9 @@ Event handling:
                 `);
 
             ELSE employee index > 2, table is appended:
+        
+        #### 
+        table is appended:
 
         <tr id="row_${i}">>
             <td>${employeeList[i].firstName}</td>
@@ -58,8 +63,12 @@ Event handling:
         6) deleteEmployee()
         an index variable is derived from html element <tr id="row_i"> where i is employee object index position, as set in displayEmploye().
 
+        ## below code does not work:
+
         Similar IF-ELSE tree as in displayEmployees() empties <td> in first three table rows
         and removes target rows if index variable > 2:
+
+        #####
 
             $(this).remove();
         FOR-OF loop loops through employeeList array. for each employee:
@@ -95,7 +104,7 @@ Event handling:
 // COMPLETE ###3 Table styles - boring and ugly
 // COMPLETE ###4 Give table a 3 row structure to start. first three employee inputs would be inserted into existing <tr> elements; subsequent employees would add new <tr> elements.
 //  COMPLETE - set html template <tr> id row_0 - row_2
-//  COMPLETE - in displayEmployees(), if-then tree??
-//  COMPLETE - edit deleteEmployee() 
+//  FAILS - in displayEmployees(), if-then tree??
+//  FAILS - edit deleteEmployee() 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
